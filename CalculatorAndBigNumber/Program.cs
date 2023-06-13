@@ -7,4 +7,4 @@ using CalculatorAndBigNumber;
 
 
 var bigNumber= new BigNumbers();
-bigNumber.Karabutso(897346, 09794754);
+Console.WriteLine(bigNumber.mutiplationString("523674567134", "689438768134"));
