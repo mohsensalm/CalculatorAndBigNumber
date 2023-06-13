@@ -7,4 +7,6 @@ using CalculatorAndBigNumber;
 
 
 var bigNumber= new BigNumbers();
-Console.WriteLine(bigNumber.mutiplationString("523674567134", "689438768134"));
+//Console.WriteLine(bigNumber.mutiplationString("523674567134", "689438768134"));
+Console.WriteLine(bigNumber.Karatsuba(867569999, 999354999));
+Console.ReadKey();
