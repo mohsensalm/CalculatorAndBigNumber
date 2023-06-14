@@ -50,41 +50,40 @@ public class BigNumbers
     //    }
     //}
 
-    //public string mutiplationString(string num1 , string num2)
-    //{
-    //    int[] s1 = num1.Reverse().Select(c => c - '0').ToArray();
-    //    int[] s2 = num2.Reverse().Select(c => c - '0').ToArray();
-    //    int[]result = new int[s1.Length+s2.Length];
-    //    // Multiply each digit in vec2 with vec1 and add the result to the appropriate position in the result array
-    //    for (var i = 0; i < s2.Length; i++)
-    //    {
-    //        var carry = 0;
-    //        for (var j = 0; j < s1.Length; j++)
-    //        {
-    //            var product = s1[j] * s2[i] + carry + result[i + j];
-    //            carry = product / 10;
-    //            result[i + j] = product % 10;
-    //        }
-    //        result[i + s1.Length] = carry;
-    //    }
-    //    //&&  result[result.Length - 1] == 0
+    public string mutiplationString(string num1, string num2)
+    {
+        int[] s1 = num1.Reverse().Select(c => c - '0').ToArray();
+        int[] s2 = num2.Reverse().Select(c => c - '0').ToArray();
+        int[] result = new int[s1.Length + s2.Length];
+        // Multiply each digit in vec2 with vec1 and add the result to the appropriate position in the result array
+        for (var i = 0; i < s2.Length; i++)
+        {
+            var carry = 0;
+            for (var j = 0; j < s1.Length; j++)
+            {
+                var product = s1[j] * s2[i] + carry + result[i + j];
+                carry = product / 10;
+                result[i + j] = product % 10;
+            }
+            result[i + s1.Length] = carry;
+        }
+        //&&  result[result.Length - 1] == 0
 
-    //    while (result.Length > 1 && result[^1] == 0)       
-    //    {
-    //        Array.Resize(ref result, result.Length - 1);
-    //    }
-    //    var str = new string(result.Reverse().Select(d => (char)(d + '0')).ToArray());
-    //    return str;
-    //}
+        while (result.Length > 1 && result[^1] == 0)
+        {
+            Array.Resize(ref result, result.Length - 1);
+        }
+        var str = new string(result.Reverse().Select(d => (char)(d + '0')).ToArray());
+        return str;
+    }
     private int counter = 0;
     public BigInteger Karatsuba(BigInteger x, BigInteger y)
     {
 
-
+        return x * y;
         int n = (int)Math.Max(BigInteger.Log(x, 2), BigInteger.Log(y, 2));
-        if (n <= 10) return x * y;
+       // if (n <= 10) return x * y;
         n /= 5;
-
 
         BigInteger b = x >> n;
         BigInteger a = x - (b << n);
