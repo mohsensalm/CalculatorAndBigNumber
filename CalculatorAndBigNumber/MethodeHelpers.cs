@@ -8,7 +8,7 @@ namespace CalculatorAndBigNumber
 {
     public static class MethodeHelpers
     {
-		public static int GetNumLength(long num)
+        public static int GetNumLength(long num)
         {
             int length = 0;
             while (num != 0)
@@ -39,6 +39,25 @@ namespace CalculatorAndBigNumber
             return (int)result;
         }
 
+        public enum CalculatorComands
+        {
+            Plus = 1,
+            Minus,
+            Divide,
+            Multiplication,
+            Remain,
+            Power
+        }
+
+        public static bool ContinueCalculating()
+        {
+            Console.WriteLine("do you wane continue:   true   or   false");
+            string? s = Console.ReadLine();
+
+            bool flag = bool.Parse(s);
+            return flag;
+        }
+
     }
-   
+
 }

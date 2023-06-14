@@ -101,8 +101,6 @@ public class BigNumbers
         Console.WriteLine(counter);
 
         return ac + ((abc - ac - bd) << n) + (bd << (2 * n));
-
-
     }
 
 
